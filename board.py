@@ -72,12 +72,12 @@ with tf.Session() as sess:
             summary_writer.add_summary(summary_str, iteration*total_batch + i)
         # Display logs per iteration step
         if iteration % display_step == 0:
-            print "Iteration:" , '%04d' % (iteration + 1), "cost=", "{:.9f}".format(avg_cost)
+            print ("Iteration:" , '%04d' % (iteration + 1), "cost=", "{:.9f}".format(avg_cost))
 
-    print "Tuning completed!"
+    print ("Tuning completed!")
 
     # Test the model
     predictions = tf.equal(tf.argmax(model, 1), tf.argmax(y, 1))
     # Calculate accuracy
     accuracy = tf.reduce_mean(tf.cast(predictions, "float"))
-    print "Accuracy:", accuracy.eval({x: mnist.test.images, y: mnist.test.labels})
+    print ("Accuracy:", accuracy.eval({x: mnist.test.images, y: mnist.test.labels}))
