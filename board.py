@@ -1,6 +1,6 @@
 # Import MNIST data
-import input_data
-mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
+from tensorflow.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
 import tensorflow as tf
 
@@ -53,7 +53,7 @@ with tf.Session() as sess:
     
     
     # Change this to a location on your computer
-    summary_writer = tf.train.SummaryWriter('/LOCATION/ON/YOUR/COMPUTER/', graph_def=sess.graph_def)
+    summary_writer = tf.train.SummaryWriter('/keith', graph_def=sess.graph_def)
 
     # Training cycle
     for iteration in range(training_iteration):
