@@ -1,4 +1,5 @@
 # Import MNIST data
+#old from tensorflow.examples.tutorials.mnist import input_data
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
@@ -71,7 +72,7 @@ with tf.Session() as sess:
             summary_writer.add_summary(summary_str, iteration*total_batch + i)
         # Display logs per iteration step
         if iteration % display_step == 0:
-            print "Iteration:", '%04d' % (iteration + 1), "cost=", "{:.9f}".format(avg_cost)
+            print "Iteration:" , '%04d' % (iteration + 1), "cost=", "{:.9f}".format(avg_cost)
 
     print "Tuning completed!"
 
